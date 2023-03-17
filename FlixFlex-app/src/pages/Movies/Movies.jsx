@@ -58,7 +58,6 @@ const Movies = () => {
 
         if (data.videos && data.videos.results) {
             const trailer = data.videos.results.find(vid => vid.name === "Official Trailer")
-            console.log(data.videos)
             setTrailer(trailer ? trailer : data.videos.results[0])
         }
 
