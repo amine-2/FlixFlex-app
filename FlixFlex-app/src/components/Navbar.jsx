@@ -1,12 +1,27 @@
 import { useState } from 'react'
 import logo from '../assets/logo2.png'
 import { useStateContext } from '../contexts/StateContext'
-import { FaPowerOff, FaSearch } from "react-icons/fa";
+import { FaPowerOff, FaSearch, FaSleigh } from "react-icons/fa";
 import { Link } from 'react-router-dom'
+import {BiMenuAltRight} from 'react-icons/bi'
+import {IoCloseOutline} from 'react-icons/io5'
 import { useNavigate } from 'react-router-dom';
 
 
 const Nav = ({ isScrolled,fetch }) => {
+   const [showMenu, setShowMenu] = useState(false)
+    
+    if (showMenu){
+        document.getElementById("links").style.display = "flex"
+    }
+    
+    function hide() {
+        setShowMenu(false)
+        document.getElementById("links").style.display = "none"
+    
+    }
+
+    /*-toggll--*/
 
     const navigate= useNavigate()
 
@@ -50,7 +65,10 @@ const Nav = ({ isScrolled,fetch }) => {
                         <img src={logo} className="logo" />
                     </div>
 
-                    <ul className="links flex">
+                    <ul id="links" className="links flex">
+                        <button className='close-menu' onClick={() => hide()}>
+                           <IoCloseOutline/>
+                        </button>
                         {links.map(({ name, link }) => {
                             return (
                                 <li key={name}>
@@ -85,8 +103,11 @@ const Nav = ({ isScrolled,fetch }) => {
                             />
                         </div>
                         </form>
-                        <button onClick={() => logout()}>
+                        <button className='signout' onClick={() => logout()}>
                             <FaPowerOff />
+                        </button>
+                        <button className='menu' onClick={()=>setShowMenu(true)}>
+                            <BiMenuAltRight/>
                         </button>
                     </div>
 
