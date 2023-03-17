@@ -115,7 +115,7 @@ const Movies = () => {
                     <div className="container">
                         <div className="logo">
                             <h1>{movie.title}</h1>
-                            <h3>{movie.title}</h3>
+                            <h3>{movie.tagline}</h3>
                         </div>
                         <div className="buttons">
                             <button
