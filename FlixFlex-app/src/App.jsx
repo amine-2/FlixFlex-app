@@ -14,8 +14,8 @@ function App() {
   return (
     <BrowserRouter>
       <Routes>
-       <Route path={"/landing"} element={<Landing />} />
-        <Route path={"/"} element={<Dashboard/>} />
+       <Route path={"/"} element={<Landing />} />
+        <Route path={"/main"} element={<Dashboard/>} />
         {authtoken && <Route path={"/player"} element={<Player/>} />} 
         {authtoken && <Route path={"/movies"} element={<Movies/>} />} 
         {authtoken && <Route path={"/tv"} element={<Series/>} />} 

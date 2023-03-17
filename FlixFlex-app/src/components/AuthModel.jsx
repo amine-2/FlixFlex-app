@@ -48,7 +48,7 @@ const AuthModel = () => {
 
             const success = response.status === 201
             setTimeout(() => {
-                if (success ) navigate('/')     
+                if (success ) navigate('/main')     
             }, 1000);
 
 

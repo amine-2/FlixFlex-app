@@ -24,7 +24,7 @@ const Nav = ({ isScrolled,fetch }) => {
         const [inputHover, setInputHover] = useState(false);
 
     const links = [
-        { name: "Home", link: "/" },
+        { name: "Home", link: "/main" },
         { name: "TV Shows", link: "/tv" },
         { name: "Movies", link: "/movies" },
     ];
@@ -35,7 +35,7 @@ const Nav = ({ isScrolled,fetch }) => {
     }
 
     const logout = () => {
-        navigate('/landing')
+        navigate('/')
         removeCookie('UserId', cookies.UserId)
         removeCookie('AuthToken', cookies.AuthToken)
         window.location.reload()
